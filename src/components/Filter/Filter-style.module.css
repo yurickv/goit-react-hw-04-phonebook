@@ -1,0 +1,10 @@
+.filterDiv {
+  display: flex;
+  /* flex-direction: column; */
+  gap: 30px;
+  background-color: bisque;
+  font-size: 26px;
+}
+.filterDiv > input {
+  border-radius: 5px;
+}

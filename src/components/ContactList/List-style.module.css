@@ -1,0 +1,23 @@
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: beige;
+  width: 700px;
+}
+.contactItem {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  font-size: 34px;
+}
+.deleteButton {
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 20px;
+  width: 100px;
+}
+.deleteButton:hover {
+  border-color: antiquewhite;
+  color: tomato;
+}

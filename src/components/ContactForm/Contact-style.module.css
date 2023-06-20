@@ -1,0 +1,33 @@
+.form {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+  padding: 20px;
+  border: solid;
+}
+
+.form button {
+  display: inline-block;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100px;
+  height: 50px;
+  background-color: darkolivegreen;
+}
+.form button:hover {
+  border-color: antiquewhite;
+  color: antiquewhite;
+}
+.inputLabel {
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.inputLabel input {
+  font-size: 20px;
+}
+.inputLabel input:focus {
+  border-color: darkkhaki;
+}
