@@ -5,10 +5,10 @@ import { ContactList } from './ContactList/ContactList'
 
 const LS_KEY = 'contacts'
 const defaultContacts = [
-  { id: 'id-1', name: 'Rosie Simpson', number: '8097-459-12-56' },
-  { id: 'id-2', name: 'Hermione Kline', number: '8097-443-89-12' },
-  { id: 'id-3', name: 'Eden Clements', number: '8097-645-17-79' },
-  { id: 'id-4', name: 'Annie Copeland', number: '8097-227-91-26' },
+  { id: 'id-1', name: 'Rosie Simpson', number: '80974591256' },
+  { id: 'id-2', name: 'Hermione Kline', number: '80974438912' },
+  { id: 'id-3', name: 'Eden Clements', number: '80976451779' },
+  { id: 'id-4', name: 'Annie Copeland', number: '80972279126' },
 ];
 
 export function App() {
