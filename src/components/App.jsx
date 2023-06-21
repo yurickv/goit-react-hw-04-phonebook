@@ -4,47 +4,46 @@ import { Filter } from './Filter/Filter'
 import { ContactList } from './ContactList/ContactList'
 
 const LS_KEY = 'contacts'
+const defaultContacts = [
+  { id: 'id-1', name: 'Rosie Simpson', number: '8097-459-12-56' },
+  { id: 'id-2', name: 'Hermione Kline', number: '8097-443-89-12' },
+  { id: 'id-3', name: 'Eden Clements', number: '8097-645-17-79' },
+  { id: 'id-4', name: 'Annie Copeland', number: '8097-227-91-26' },
+];
 
 export function App() {
 
-  const defaultContacts = [
-    { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-    { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-    { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-    { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-  ];
   const [phonebook, setPhonebook] = useState(() => {
     return JSON.parse(localStorage.getItem(LS_KEY)) ?? defaultContacts;
-  })
-  const [filter, setFilter] = useState('');
+  });
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
     localStorage.setItem(LS_KEY, JSON.stringify(phonebook))
   }, [phonebook])
 
+
   // функція додавання контактів
   const addContact = obj => {
     const chackContact = phonebook.find(e => { return e.name.toLowerCase() === obj.name.toLowerCase(); });
 
-    if (chackContact) return alert(`${chackContact.name} is already in contacts`);
+    if (chackContact) return alert(`${obj.name} is already in contacts`);
 
-    setPhonebook(prev => {
-      return [...prev.contacts, ...obj];
-    });
+    setPhonebook([...phonebook, { ...obj }]);
   };
 
+  // Пошук (фільтр) контактів
   const changeFilter = ({ target }) => {
-    setFilter(target.value);
+    setSearch(target.value);
   };
-
-  const deleteContact = id => {
-    setPhonebook(prev => prev.contacts.filter(e => e.id !== id));
-  };
-
   const visibleNumbers = phonebook.filter(({ name }) => {
-    return name.toLowerCase().includes(filter.toLowerCase());
+    return name.toLowerCase().includes(search.toLowerCase());
   });
 
+  // Видалення контактів
+  const deleteContact = id => {
+    setPhonebook(prev => prev.filter(e => e.id !== id));
+  };
 
   return (
     <div style={appSlyle}>
@@ -58,8 +57,6 @@ export function App() {
 
     </div>
   )
-
-
 };
 
 

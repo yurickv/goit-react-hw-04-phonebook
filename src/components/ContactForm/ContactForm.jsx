@@ -25,9 +25,7 @@ export const ContactForm = ({ addContact }) => {
                     .matches(/^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/, "Must Contain only letter"),
                 number: Yup.number()
                     .positive()
-                    // .integer()
                     .required("Phone number Required")
-                // .matches(/(?=.*[0-9])/, "Must Contain Number")
             })}
         >
             <Form className={css.form}>
@@ -35,7 +33,7 @@ export const ContactForm = ({ addContact }) => {
                     <Field
                         type="text"
                         name="name"
-                        maxlength="20"
+                        maxLength="20"
                         placeholder="Add the name"
                         // pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
                         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
@@ -46,8 +44,8 @@ export const ContactForm = ({ addContact }) => {
                     <Field
                         type="tel"
                         name="number"
-                        minlength="10"
-                        maxlength="13"
+                        minLength="10"
+                        maxLength="11"
                         placeholder="Add the phone number"
                         // pattern='\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}'
                         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
